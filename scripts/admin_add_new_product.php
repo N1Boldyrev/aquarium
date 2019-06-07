@@ -24,16 +24,7 @@ if(!$supplyer_name||!$country||!$city||!$street||!$phone_number||!$type||!$name|
    return;
 }
 else{
-    $host='localhost';
-$port='3306';
-$dbname='aquarium';
-$charset='utf8';
-$dsn="mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
-$options=[
-    PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
-];
-$pdo=new PDO($dsn,'root','',$options);
+    include "../pdo.php";
 $stmt=$pdo->query("INSERT INTO supplyer VALUES (NULL,'".$supplyer_name."','".$country."','".$city."','".$street."','".$phone_number."')");
 $stmt=$pdo->query("SELECT LAST_INSERT_ID();");
 foreach($stmt as $q){

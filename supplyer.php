@@ -37,16 +37,7 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                          <div id="base_out">
                         <h1>Поставщики и поставки</h1>
                        <?php
-                       $host='localhost';
-                       $port='3306';
-                       $dbname='aquarium';
-                       $charset='utf8';
-                       $dsn="mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
-                       $options=[
-                           PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-                           PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
-                       ];
-                       $pdo=new PDO($dsn,'root','',$options);
+                       include "pdo.php";
                        $stmt=$pdo->query("SELECT * FROM supplyer");
                        echo "<table> <tr><td>Имя поставщика</td><td>Страна</td><td>Город</td><td>Улица</td><td>Контактный номер</td><td>Вес поставки</td><td>Цена поставки</td><td>Дата доставки</td><td></td><td></td></tr>";
                        foreach($stmt as $query){

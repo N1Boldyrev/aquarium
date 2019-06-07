@@ -3,16 +3,7 @@ $id=$_GET["id"];
 session_start();
 $_SESSION["send_buyer_id"]=$id;
 
-$host='localhost';
-$port='3306';
-$dbname='aquarium';
-$charset='utf8';
-$dsn="mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
-$options=[
-    PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
-];
-$pdo=new PDO($dsn,'root','',$options);
+include "../pdo.php";
 $stmt=$pdo->query("SELECT * FROM buyer WHERE Buyer_ID=".$id."");
 foreach($stmt as $array){
     echo'<h3 style="text-align:left;">Изменение данных о покупателе</h3>

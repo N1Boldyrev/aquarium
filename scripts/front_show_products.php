@@ -3,16 +3,7 @@ header("Cache-Control: no-store, no-cache, must-revalidate");
 $selected=$_GET["selection"];
 $min=$_GET["min"];
 $max=$_GET["max"];
-$host='localhost';
-$port='3306';
-$dbname='aquarium';
-$charset='utf8';
-$dsn="mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
-$options=[
-    PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
-];
-$pdo=new PDO($dsn,'root','',$options);
+include "../pdo.php";
     if($selected=='*'){
         if($min==0 && $max==0){
             $stmt=$pdo->query("SELECT * FROM product;");

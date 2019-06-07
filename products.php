@@ -40,16 +40,7 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                         </div>
                         <div id="base_out">
                             <?php
-                             $host='localhost';
-                             $port='3306';
-                             $dbname='aquarium';
-                             $charset='utf8';
-                             $dsn="mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
-                             $options=[
-                                 PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-                                 PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
-                             ];
-                             $pdo=new PDO($dsn,'root','',$options);
+                            include "pdo.php";
                              $stmt=$pdo->query("SELECT * FROM product");
                              foreach($stmt as $array){
                                  $price=$array["Price"];
