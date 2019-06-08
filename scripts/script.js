@@ -148,6 +148,7 @@ function show_product_description(currentID){
             $("#base_out").html(response);
         }
     });
+    document.getElementById("base_out").style.height="100%";
 }
 
 function size_less(){
