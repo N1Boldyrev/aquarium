@@ -230,6 +230,7 @@ function open_bucket(){
             $("#base_out").html(response);
         }
     });
+    document.getElementById("base_out").style.height="100%";
 }
 
 function bucket_delete(delete_id){
@@ -289,6 +290,7 @@ function send_order(){
             $("#contact_form").html(response);
         }
     });
+    document.getElementById("base_out").style.height="100%";
      bucket_price=0.0;
      product_counter=0;
      send_bucket_id='';
