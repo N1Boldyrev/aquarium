@@ -37,7 +37,7 @@ include "../pdo.php";
     foreach($stmt as $array){
     echo "<div id='shop_element'> 
     <a href='#' id='".$array["Product_ID"]."' onclick='show_product_description(this.id)'>
-    <img src='../imgs/description_imgs/id".$array["Product_ID"].".jpg' class='img-rounded'width='300'height='300'><br>".$array["Name"]."
+    <img src='http://172.23.64.64/ftp/22/2222756/aquarium/imgs/description_imgs/id".$array["Product_ID"].".jpg' class='img-rounded'width='300'height='300'><br>".$array["Name"]."
     <br>".$array["Type"]."
     <br>".$array["Price"]."₽
     </a>

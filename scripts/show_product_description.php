@@ -8,7 +8,7 @@ include "../pdo.php";
         echo '<script>var price='.$price.';</script>';
         echo "<h1>".$array["Name"]."</h1>";
         echo "<h3>".$array["Type"]."</h3>";
-        echo"<img src='../imgs/description_imgs/id".$array["Product_ID"].".jpg' class='img-rounded pull-xs-left description_img' width='500'>
+        echo"<img src='http://172.23.64.64/ftp/22/2222756/aquarium/imgs/description_imgs/id".$array["Product_ID"].".jpg' class='img-rounded pull-xs-left description_img' width='500'>
         <div class='description_text'><p>".$array["Description"]."</p>
         <br><p class='description_price'>Цена: <span id='description_price'>".$array["Price"]."</span>₽
         <br><br> 
