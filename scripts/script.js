@@ -233,7 +233,11 @@ function open_bucket(){
             $("#base_out").html(response);
         }
     });
+<<<<<<< HEAD
     document.getElementById("row").style.height="100%";
+=======
+    document.getElementById("base_out").style.height="100%";
+>>>>>>> 6eccac958dad87aae16e508381b3ce8c3b322496
 }
 
 function bucket_delete(delete_id){
@@ -294,7 +298,11 @@ function send_order(){
             $("#contact_form").html(response);
         }
     });
+<<<<<<< HEAD
     document.getElementById("row").style.height="100%";
+=======
+    document.getElementById("base_out").style.height="100%";
+>>>>>>> 6eccac958dad87aae16e508381b3ce8c3b322496
      bucket_price=0.0;
      product_counter=0;
      send_bucket_id='';
