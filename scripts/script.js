@@ -22,6 +22,7 @@
 </div>'
     }
 function front_product_show(){//Функция, отображающая ассортимент из базы данных
+    document.getElementById("row").style.height="100%";
     loading_animation_start();
     selector=document.getElementById("type_select").value;
     min_price=document.getElementById("min_price").value;
@@ -40,7 +41,7 @@ function front_product_show(){//Функция, отображающая асс�
             $("#base_out").html(response);
         }
     });
-    document.getElementById("main_content").style.height="100%";
+    document.getElementById("row").style.height="100%";
 }
 document.onload=front_product_show();
 document.getElementById("bucket").innerHTML='Товары: '+product_counter+'шт. за '+bucket_price+' ₽';
@@ -140,6 +141,7 @@ function show_product_description(currentID){
                         </div>\
                         </div> \
     "
+    document.getElementById("row").style.height="100%";
     $.ajax({
         type: "GET",
         url: "scripts/show_product_description.php",
@@ -148,7 +150,7 @@ function show_product_description(currentID){
             $("#base_out").html(response);
         }
     });
-    document.getElementById("main_content").style.height="100%";
+    document.getElementById("row").style.height="100%";
 }
 
 function size_less(){
@@ -222,6 +224,7 @@ function open_bucket(){
                         </div>\
                         </div> \
     "
+    document.getElementById("row").style.height="100%";
     $.ajax({
         type: "GET",
         url: "scripts/bucket.php",
@@ -230,6 +233,7 @@ function open_bucket(){
             $("#base_out").html(response);
         }
     });
+    document.getElementById("row").style.height="100%";
 }
 
 function bucket_delete(delete_id){
@@ -281,6 +285,7 @@ function send_order(){
     var apartment_number=document.getElementById("apartment_number").value;
     var postcode=document.getElementById("postcode").value;
     var phone_number=document.getElementById("phone_number").value;
+    document.getElementById("row").style.height="100%";
     $.ajax({
         type: "GET",
         url: "scripts/order.php",
@@ -289,6 +294,7 @@ function send_order(){
             $("#contact_form").html(response);
         }
     });
+    document.getElementById("row").style.height="100%";
      bucket_price=0.0;
      product_counter=0;
      send_bucket_id='';
