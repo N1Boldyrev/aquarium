@@ -56,7 +56,7 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                           </div>
                         </span>
                      </div>
-                     <div class="col-md-8 wear main_content">
+                     <div class="col-md-8 wear main_content" id="main_content">
                         <h1>Наши товары</h1>
                         <div id="base_out">
                         </div>

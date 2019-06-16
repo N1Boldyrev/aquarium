@@ -33,7 +33,7 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
             <div class="row" id="row">
               <div class="col-md-1 underwear"> 
                   </div>
-                     <div class="col-md-10 wear main_content">
+                     <div class="col-md-10 wear main_content" id="main_content">
                         <h1>Заказы</h1>
                         <div id="base_out">
                             <?php

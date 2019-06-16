@@ -40,7 +40,7 @@ function front_product_show(){//Функция, отображающая асс�
             $("#base_out").html(response);
         }
     });
-    document.getElementById("base_out").style.height="100%";
+    document.getElementById("main_content").style.height="100%";
 }
 document.onload=front_product_show();
 document.getElementById("bucket").innerHTML='Товары: '+product_counter+'шт. за '+bucket_price+' ₽';
@@ -148,7 +148,7 @@ function show_product_description(currentID){
             $("#base_out").html(response);
         }
     });
-    document.getElementById("base_out").style.height="100%";
+    document.getElementById("main_content").style.height="100%";
 }
 
 function size_less(){
