@@ -36,10 +36,13 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                      <div class="col-md-10 wear main_content">
                          <div id="base_out">
                         <h1>Поставщики и поставки</h1>
+                        <button class="buy_button" onclick="add_supplyer()">Добавить поставщика</button>
+                        <br>
+                        <br>
                        <?php
                        include "pdo.php";
                        $stmt=$pdo->query("SELECT * FROM supplyer");
-                       echo "<table> <tr><td>Имя поставщика</td><td>Страна</td><td>Город</td><td>Улица</td><td>Контактный номер</td><td>Вес поставки</td><td>Цена поставки</td><td>Дата доставки</td><td></td><td></td></tr>";
+                       echo "<table> <tr><td>Имя поставщика</td><td>Страна</td><td>Город</td><td>Улица</td><td>Контактный номер</td><td></td><td></td></tr>";
                        foreach($stmt as $query){
                         echo"<tr>
                         <td>".$query["Supplyer_name"]."</td>
@@ -49,18 +52,40 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                         <td>".$query["Phone_number"]."</td>";
                         $query=$pdo->query("SELECT * FROM waybill where Supplyer_ID=".$query["Supplyer_ID"]."");
                         foreach($query as $q){
-                            echo "
-                            <td>".$q["Weight"]."</td>
-                            <td>".$q["Price"]."</td>
-                            <td>".$q["Delivery_date"]."</td>
-                            ";
                         }
                         echo "<td><a href='#' onclick='change_supplyer(this.id)' id='".$q["Supplyer_ID"]."'>Изменить</a></td>
                         <td><a href='#' onclick='delete_supplyer(this.id)' id='".$q["Supplyer_ID"]."'>Удалить</a></td>
                         </tr>";
                         }
+                        
                        echo "</table>";
                        ?>
+                       <br>
+                       <br>
+                            <h1>Накладные на товар</h1>
+                            <br>
+                            <?php
+                            include "pdo.php";
+                            echo "<table><tr><td>Название товара</td><td>Название поставщика</td><td>Вес поставки</td><td>Цена поставки</td><td>Дата доставки</td><td></td><td></td></tr>";
+                            $stmt=$pdo->query("SELECT * FROM product");
+                            foreach($stmt as $query){
+                              echo "<tr><td>".$query["Name"]."</td>";
+                              $zapr=$pdo->query("SELECT * FROM waybill where Waybill_ID =".$query["Waybill_ID"]."");
+                              foreach($zapr as $zap){
+                                $qustion=$pdo->query("SELECT * FROM supplyer WHERE Supplyer_ID=".$zap["Supplyer_ID"]."");
+                                foreach($qustion as $qes){
+                                  echo "<td>".$qes["Supplyer_name"]."</td>
+                                  <td>".$zap["Weight"]."кг.</td>
+                                  <td>".$zap["Price"]."₽</td>
+                                  <td>".$zap["Delivery_date"]."</td>
+                                  <td><a href='#' id=".$zap["Waybill_ID"]." onclick='change_waybill(this.id)'>Изменить</a></td>
+                                  <td><a href='#' id=".$zap["Waybill_ID"]."onclick='delete_waybill(this.id)>Удалить</a></td>
+                                  ";
+                                }
+                            }
+                            }
+                            echo "</table>";
+                            ?>
                        </div>
                        </div>
                          <div class="col-md-1 underwear"> 

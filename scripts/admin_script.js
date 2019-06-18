@@ -136,13 +136,10 @@ function change_supplyer_fin(){
     var city=document.getElementById("city").value;
     var street=document.getElementById("street").value;
     var phone_number=document.getElementById("phone_number").value;
-    var weight=document.getElementById("weight").value;
-    var price=document.getElementById("waybill_price").value;
-    var waybill_date=document.getElementById("waybill_date").value;
     $.ajax({
         type: "GET",
         url: "scripts/admin_change_supplyer.php",
-        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number,weight:weight,price:price,waybill_date},
+        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number},
         success: function (response) {
             $("#base_out").html(response);
         }
@@ -157,9 +154,32 @@ function delete_supplyer(getID){
         url: "scripts/admin_delete_supplyer.php",
         data:{id:getID},
         success: function (response) {
+            $("#base_out").html(response);
         }
     });
-    document.location.href="supplyer.php";
     document.getElementById("row").style.height="100%";
 
+}
+
+function delete_waybill(getID){
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_delete_waybill.php",
+        data:{id:getID},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+function change_waybill(getID){
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_change_waybill_form.php",
+        data:{id:getID},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
 }

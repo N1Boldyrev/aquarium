@@ -17,18 +17,6 @@
                            Контактный номер: <input type="text" name="" id="phone_number" value="'.$query["Phone_number"].'">
                            <br><br>';
                        }
-                       $stmt=$pdo->query("SELECT * FROM waybill WHERE Supplyer_ID=".$id."");
-                       foreach($stmt as $query){
-                           echo' <h3  style="text-align:left">Накладная</h3>
-                           <br>
-                           Вес товара: <input type="text" name="" id="weight" value="'.$query["Weight"].'">
-                           <br><br>
-                           Цена за поставку: <input type="text" name="" id="waybill_price" value="'.$query["Price"].'">
-                           <br><br>
-                           Дата доставки: <input type="date" name="" id="waybill_date" value="'.$query["Delivery_date"].'">
-                           <br><br>
-                           ';
                            echo '<button class="yellow_button" onclick="change_supplyer_fin()">Изменить</button>';
-                        }
 ?>
                        
