@@ -183,3 +183,21 @@ function change_waybill(getID){
     });
     document.getElementById("row").style.height="100%";
 }
+
+function change_waybill_fin(){
+    var product_name=document.getElementById("product_name_selection").value;
+    var supplyer_name=document.getElementById("supplyer_name_selection").value;
+    var weight=document.getElementById("weight").value;
+    var price=document.getElementById("price").value;
+    var delivery_date=document.getElementById("delivery_date").value;
+
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_change_waybill.php",
+        data:{product_name:product_name,supplyer_name:supplyer_name,weight:weight,price:price,delivery_date:delivery_date},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}

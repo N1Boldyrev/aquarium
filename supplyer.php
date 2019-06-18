@@ -63,6 +63,8 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                        <br>
                        <br>
                             <h1>Накладные на товар</h1>
+                            <button class="buy_button" onclick="add_waybill()">Добавить накладную</button>
+                            <br>
                             <br>
                             <?php
                             include "pdo.php";
