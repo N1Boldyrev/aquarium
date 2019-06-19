@@ -80,8 +80,8 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                                   <td>".$zap["Weight"]."кг.</td>
                                   <td>".$zap["Price"]."₽</td>
                                   <td>".$zap["Delivery_date"]."</td>
-                                  <td><a href='#' id=".$zap["Waybill_ID"]." onclick='change_waybill(this.id)'>Изменить</a></td>
-                                  <td><a href='#' id=".$zap["Waybill_ID"]."onclick='delete_waybill(this.id)>Удалить</a></td>
+                                  <td><a href='#' id='".$zap["Waybill_ID"]."' onclick='change_waybill(this.id)'>Изменить</a></td>
+                                  <td><a href='#' id='".$zap["Waybill_ID"]."' onclick='delete_waybill(this.id)'>Удалить</a></td>
                                   ";
                                 }
                             }

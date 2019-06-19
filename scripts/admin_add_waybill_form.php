@@ -17,6 +17,8 @@ foreach($query as $array){
 echo "</select>
 <br></br>
 Вес поставки: <input type='text' id='weight'>
+<br><br>
+Цена поставки: <input type='text' id='price'>
 <br></br>
 Дата доставки: <input type='date' id='delivery_date'>
 <br></br>

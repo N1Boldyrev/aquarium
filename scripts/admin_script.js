@@ -118,6 +118,36 @@ function delete_product_elem(getID){
     document.getElementById("row").style.height="100%";
 }
 
+function add_supplyer(){
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_add_supplyer_form.php",
+        data:{},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+
+function add_supplyer_fin(){
+
+    var supplyer_name=document.getElementById("supplyer_name").value;
+    var country=document.getElementById("country").value;
+    var city=document.getElementById("city").value;
+    var street=document.getElementById("street").value;
+    var phone_number=document.getElementById("phone_number").value;
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_add_supplyer.php",
+        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+
 function change_supplyer(getID){
     $.ajax({
         type: "GET",
