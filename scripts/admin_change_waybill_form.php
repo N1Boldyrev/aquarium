@@ -22,7 +22,7 @@ echo "<br><br>Вес поставки: <input type='text' value='".$stmt["Weight
 <br><br>
 Цена поставки:  <input type='text' value='".$stmt["Price"]."' id='price'>
 <br><br>
-Дата доставки: <input type='text' value='".$stmt["Delivery_date"]."' id='delivery_date'>
+Дата доставки: <input type='date' value='".$stmt["Delivery_date"]."' id='delivery_date'>
 <br></br>
 <button class='yellow_button' onclick='change_waybill_fin()'>Изменить</button>
 ";
