@@ -82,22 +82,14 @@ function to_products(){
 }
 
 function add_new_product(){
-    var supplyer_name=document.getElementById("supplyer_name").value;
-    var country=document.getElementById("country").value;
-    var city=document.getElementById("city").value;
-    var street=document.getElementById("street").value;
-    var phone_number=document.getElementById("phone_number").value;
     var type=document.getElementById("type").value;
     var name=document.getElementById("name").value;
     var price=document.getElementById("price").value;
     var description=document.getElementById("description").value;
-    var weight=document.getElementById("weight").value;
-    var waybill_price=document.getElementById("waybill_price").value;
-    var waybill_date=document.getElementById("waybill_date").value;
     $.ajax({
         type: "GET",
         url: "scripts/admin_add_new_product.php",
-        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number,type:type,name:name,price:price,description:description,weight:weight,waybill_date:waybill_date,waybill_price:waybill_price},
+        data:{type:type,name:name,price:price,description:description},
         success: function (response) {
             $("#base_out").html(response);
         }
@@ -115,6 +107,36 @@ function delete_product_elem(getID){
         }
     });
     to_products();
+    document.getElementById("row").style.height="100%";
+}
+
+function add_supplyer(){
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_add_supplyer_form.php",
+        data:{},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+
+function add_supplyer_fin(){
+
+    var supplyer_name=document.getElementById("supplyer_name").value;
+    var country=document.getElementById("country").value;
+    var city=document.getElementById("city").value;
+    var street=document.getElementById("street").value;
+    var phone_number=document.getElementById("phone_number").value;
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_add_supplyer.php",
+        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
     document.getElementById("row").style.height="100%";
 }
 
@@ -136,13 +158,10 @@ function change_supplyer_fin(){
     var city=document.getElementById("city").value;
     var street=document.getElementById("street").value;
     var phone_number=document.getElementById("phone_number").value;
-    var weight=document.getElementById("weight").value;
-    var price=document.getElementById("waybill_price").value;
-    var waybill_date=document.getElementById("waybill_date").value;
     $.ajax({
         type: "GET",
         url: "scripts/admin_change_supplyer.php",
-        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number,weight:weight,price:price,waybill_date},
+        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number},
         success: function (response) {
             $("#base_out").html(response);
         }
@@ -157,9 +176,81 @@ function delete_supplyer(getID){
         url: "scripts/admin_delete_supplyer.php",
         data:{id:getID},
         success: function (response) {
+            $("#base_out").html(response);
         }
     });
-    document.location.href="supplyer.php";
     document.getElementById("row").style.height="100%";
 
+}
+
+function delete_waybill(getID){
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_delete_waybill.php",
+        data:{id:getID},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+function change_waybill(getID){
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_change_waybill_form.php",
+        data:{id:getID},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+
+function change_waybill_fin(){
+    var product_name=document.getElementById("product_name_selection").value;
+    var supplyer_name=document.getElementById("supplyer_name_selection").value;
+    var weight=document.getElementById("weight").value;
+    var price=document.getElementById("price").value;
+    var delivery_date=document.getElementById("delivery_date").value;
+
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_change_waybill.php",
+        data:{product_name:product_name,supplyer_name:supplyer_name,weight:weight,price:price,delivery_date:delivery_date},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+
+function add_waybill(){
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_add_waybill_form.php",
+        data:{},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+}
+
+function add_waybill_fin(){
+    var product_name=document.getElementById("product_name_selection").value;
+    var supplyer_name=document.getElementById("supplyer_name_selection").value;
+    var weight=document.getElementById("weight").value;
+    var price=document.getElementById("price").value;
+    var delivery_date=document.getElementById("delivery_date").value;
+
+    $.ajax({
+        type: "GET",
+        url: "scripts/admin_add_waybill.php",
+        data:{product_name:product_name,supplyer_name:supplyer_name,weight:weight,price:price,delivery_date:delivery_date},
+        success: function (response) {
+            $("#base_out").html(response);
+        }
+    });
+    document.getElementById("row").style.height="100%";
+    
 }
