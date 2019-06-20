@@ -2,7 +2,19 @@
 
 echo "<h1>Добавление новой накладной</h1>";
 include "../pdo.php";
+$stmt=$pdo->query("SELECT * FROM supplyer");
+$count_supplyer=$stmt->rowCount();
 
+$stmt=$pdo->query("SELECT * FROM product");
+$count_product=$stmt->rowCount();
+
+if($count_supplyer==0){
+    echo "<h1>Невозможно добавить накладную. Нет активных поставщиков.</h1>";
+}
+else if($count_product==0){
+    echo "<h1>Невозможно добавить накладную. Нет активных товаров.</h1>";
+}
+ else{
 $query=$pdo->query("SELECT * FROM product");
 echo "Название товара: <select id='product_name_selection'>";
 foreach($query as $array){
@@ -24,4 +36,5 @@ echo "</select>
 <br></br>
 <button class='buy_button' onclick='add_waybill_fin()'>Добавить</button>
 ";
+}
 ?>
