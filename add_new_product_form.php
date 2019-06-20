@@ -35,28 +35,6 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
                      <div class="col-md-10 wear main_content">
                         <h1>Добавление нового товара</h1>
                         <div id="base_out">
-                            <h3 style="text-align:left">Поставщик товара</h3>
-                            <br>
-                            Имя поставщика: <input type="text" name="" id="supplyer_name">
-                            <br><br>
-                            Страна поставщика: <input type="text" name="" id="country">
-                            <br><br>
-                            Город поставщика: <input type="text" name="" id="city">
-                            <br><br>
-                            Улица: <input type="text" name="" id="street">
-                            <br><br>
-                            Контактный номер: <input type="text" name="" id="phone_number">
-                            <br><br>
-                            <h3  style="text-align:left">Накладная</h3>
-                            <br>
-                            Вес товара: <input type="text" name="" id="weight">
-                            <br><br>
-                            Цена за поставку: <input type="text" name="" id="waybill_price">
-                            <br><br>
-                            Дата доставки: <input type="date" name="" id="waybill_date">
-                            <br><br>
-                            <h3  style="text-align:left">Товар</h3>
-                            <br>
                             Тип товара: <select name="" id="type">
                               <option value="Рыбка аквариумная">Рыбка аквариумная</option>
                               <option value="Аквариум">Аквариум</option>

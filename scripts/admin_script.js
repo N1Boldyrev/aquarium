@@ -82,22 +82,14 @@ function to_products(){
 }
 
 function add_new_product(){
-    var supplyer_name=document.getElementById("supplyer_name").value;
-    var country=document.getElementById("country").value;
-    var city=document.getElementById("city").value;
-    var street=document.getElementById("street").value;
-    var phone_number=document.getElementById("phone_number").value;
     var type=document.getElementById("type").value;
     var name=document.getElementById("name").value;
     var price=document.getElementById("price").value;
     var description=document.getElementById("description").value;
-    var weight=document.getElementById("weight").value;
-    var waybill_price=document.getElementById("waybill_price").value;
-    var waybill_date=document.getElementById("waybill_date").value;
     $.ajax({
         type: "GET",
         url: "scripts/admin_add_new_product.php",
-        data:{supplyer_name:supplyer_name,country:country,city:city,street:street,phone_number:phone_number,type:type,name:name,price:price,description:description,weight:weight,waybill_date:waybill_date,waybill_price:waybill_price},
+        data:{type:type,name:name,price:price,description:description},
         success: function (response) {
             $("#base_out").html(response);
         }
