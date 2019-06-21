@@ -32,7 +32,6 @@ function delete_from_order(getID){
             $("#base_out").html(response);
         }
     });
-    document.location.href="admin.php";
     document.getElementById("row").style.height="100%";
 }
 

@@ -12,4 +12,6 @@ if($row>1){
     $pdo->query('DELETE FROM buyer WHERE Buyer_ID='.$id[1].'');
 }
 
+echo "<h1>Удаление завршено</h1>";
+
 ?>

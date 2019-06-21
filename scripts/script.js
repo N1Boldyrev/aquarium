@@ -77,6 +77,9 @@ function back_button(){
                             <br>\
                             <br>\
                             e-mail:aquarim-shop@mail.mail\
+                            <br>\
+                            <br>\
+                            <button class="buy_button" onclick="to_admin()">Администрирование</button>\
                           </div>\
               </span>\
            </div>\
