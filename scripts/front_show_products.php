@@ -34,6 +34,10 @@ include "../pdo.php";
     }
    
     $count=$stmt->rowCount();
+    if($count==0){
+        echo "<h1>Товара, удовлетворяющего фильтру нет в магазине</h1>";
+    }
+    else{
     foreach($stmt as $array){
     echo "<div id='shop_element'> 
     <a href='#' id='".$array["Product_ID"]."' onclick='show_product_description(this.id)'>
@@ -43,4 +47,5 @@ include "../pdo.php";
     </a>
     </div>";
     }
+}
 ?>
